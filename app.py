@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request
 import pickle
+import os
 
 app = Flask(_name_)
 
-model = pickle.load(open('fraud_model.pkl', 'rb'))
+model_path = os.path.join(os.path.dirname(_file_), 'fraud_model.pkl')
+model = pickle.load(open(model_path, 'rb'))
 
 @app.route('/')
 def home():
@@ -23,5 +25,4 @@ def predict():
 
     return render_template('result.html', result=result)
 
-if _name_ == "_main_":
-    app.run()
+    
