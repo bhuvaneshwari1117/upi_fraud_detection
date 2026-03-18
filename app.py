@@ -1,29 +1,17 @@
-from flask import Flask, render_template, request
-import pickle
+from flask import Flask, render_template, request, redirect
 
-app = Flask(__name__)
+app = Flask(_name_)
 
-model = pickle.load(open('fraud_model.pkl', 'rb'))
-
-@app.route('/')
-def home():
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return redirect('/predict')
     return render_template('login.html')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict')
 def predict():
-    upi = request.form['upi']
-    amount = float(request.form['amount'])
+    return render_template('index.html')
 
-    prediction = model.predict([[amount]])
-
-    if prediction[0] == 1:
-        result = "Fraud ❌"
-    else:
-        result = "Safe ✅"
-
-    return render_template('result.html', result=result)
-
-if __name__ == "__main__":
+if _name_ == '_main_':
     app.run()
-
     
