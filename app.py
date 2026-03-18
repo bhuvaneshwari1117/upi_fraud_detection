@@ -8,7 +8,7 @@ def login():
         return redirect('/predict')
     return render_template('login.html')
 
-@app.route('/predict')
+@app.route('/predict',methods=['GET'])
 def predict():
     return render_template('index.html')
 
