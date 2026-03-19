@@ -27,8 +27,8 @@ def predict():
             result = "Fraud" if prediction == 1 else "Safe"
             return render_template('result.html', result=result)
 
-        except:
-            return "Error"
+        except Expectation as e:
+            return str(e)
 
     return render_template('index.html')
 if __name__ == "__main__":
