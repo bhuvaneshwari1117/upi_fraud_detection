@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 import pickle
 import numpy as np
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 model = pickle.load(open('fraud_model.pkl', 'rb'))
 
