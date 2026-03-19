@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login</title>
-<link rel="stylesheet"href="{{url_for('static',filename='style.css')}}">
+    <title>UPI Fraud Detection</title>
 </head>
+<body style="text-align:center; margin-top:100px; font-family:Arial;">
 
-<body>
-<div class="container">   
+    <h1>UPI Fraud Detection</h1>
 
-<h2>UPI Fraud Detection Login</h2>
+    <form action="/" method="POST">
+        <label>Enter Amount:</label><br><br>
+        <input type="number" name="amount" required><br><br>
 
-<form method="post">
-
-Username
-<input name="username">
-
-Password
-<input name="password" type="password">
-
-<button type="submit">Login</button>
-
-</form>
-</div>
+        <button type="submit">Check</button>
+    </form>
 
 </body>
 </html>

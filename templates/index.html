@@ -1,37 +1,19 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>UPI Fraud Detection</title>
-
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+    <title>UPI Fraud Detection</title>
 </head>
+<body style="text-align:center; margin-top:100px; font-family:Arial;">
 
-<body>
+    <h1>UPI Fraud Detection</h1>
 
-<div class="header">
-<h2>UPI Fraud Detection System</h2>
-</div>
+    <form action="/predict" method="POST">
+        <label>Enter Amount:</label><br><br>
+        <input type="number" name="amount" required><br><br>
 
-<div class="container">
-
-<h3>Check UPI Transaction</h3>
-
-<form action="/predict" method="post">
-
-<input type="text" name="upi_id" placeholder="Enter UPI ID (example@upi)" required>
-
-<input type="number" name="amount" placeholder="Enter Amount" required>
-
-<button type="submit">Analyze Transaction</button>
-
-</form>
-
-</div>
+        <button type="submit">Check Fraud</button>
+    </form>
 
 </body>
-
 </html>
 
